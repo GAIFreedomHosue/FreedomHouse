@@ -5,8 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-
-import android.support.v4.app.Fragment;
+port android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -17,7 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import android.widget.TextView;
+imrt android.widget.TextView;
 
 public class HomePageActivity extends AppCompatActivity {
 
@@ -54,19 +53,16 @@ public class HomePageActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
+      Float  ingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+      fab.s  etOnClickListener(new View.OnClickListener() {
+          @Over  ride
+          publi  c void onClick(View view) {
+              Snack  bar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                      .setA  ction("Action", null).show();
+          }
         });
 
-    }
-
-
-    @Override
+        @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_home_page, menu);
@@ -88,7 +84,11 @@ public class HomePageActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
+
+
     /**
+     /**
      * A placeholder fragment containing a simple view.
      */
     public static class PlaceholderFragment extends Fragment {
@@ -121,9 +121,7 @@ public class HomePageActivity extends AppCompatActivity {
             textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             return rootView;
         }
-    }
-
-    /**
+    }A     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
@@ -157,6 +155,35 @@ public class HomePageActivity extends AppCompatActivity {
                     return "SECTION 3";
             }
             return null;
+        }
+    }placeholder fragment containing a simple view.
+     */
+    public static class PlaceholderFragment extends Fragment {
+        /**
+         * The fragment argument representing the section number for this
+         * fragment.
+         */
+        private static final String ARG_SECTION_NUMBER = "section_number";
+
+        /**
+             public PlaceholderFragment() {
+        }Pl        /**
+         * Returns a new instance of this fragment for the given section
+         * number.
+         */
+        public static PlaceholderFragment newInstance(int sectionNumber) {
+            PlaceholderFragment fragment = new PlaceholderFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            fragment.setArguments(args);
+            return fragment;
+        }de
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                Bundle savedInsta                 nceState) {
+            View rootView = inflater.inflate(R.layout.fragment_home_page, container, false);
+            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+            return rootView;
         }
     }
 }
