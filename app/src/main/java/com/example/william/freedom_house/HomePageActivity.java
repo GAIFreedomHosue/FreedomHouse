@@ -19,6 +19,35 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+    /*
+     * Here's how I'm structuring this:
+     * We're going to have three tabs (fragments):
+     *
+     * TODO: implement a colleges tab
+     * Tab 1 should be the colleges tab, with a progress bar and and a percentage for each college
+     * We probably also want some functionality where they can tap on a college and see a
+     * detailed breakdown.
+     *
+     * TODO: implement an upcoming dates tab
+     * Tab 2 should contain any and all upcoming dates, in order.
+     * It should have application due dates, SAT/ACT exam times, advisor meetings, interviews, etc.
+     * There should be a way to click and reach the full calendar
+     *
+     * TODO: implement a personal data tab
+     * Tab 3 should contain the students personal info. Name, GPA, SAT/ACT scores, maybe a picture.
+     * It should also have the student's advisor with Freedom House listed,
+     * as well as the advisor's contact info.
+     *
+     * I'm making each of these fragments by duplicating the PlaceholderActivity and changing what's
+     * necessary. Each of them will need it's own .xml file, which I made by copying the default
+     * fragment xml and changing what's necessary. Each will also need it's own appropriate entries
+     * in the strings.xml file.
+     *
+     * The main problem I'm having is figuring out how the fragments interact with the ViewPager/
+     * SectionsPagerAdapter.
+     *
+     */
+
 public class HomePageActivity extends AppCompatActivity {
 
     /**
@@ -155,6 +184,78 @@ public class HomePageActivity extends AppCompatActivity {
             View rootView = inflater.inflate(R.layout.fragment_colleges, container, false);
             TextView textView = (TextView) rootView.findViewById(R.id.section_label);
             textView.setText(getString(R.string.college_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+            return rootView;
+        }
+    }
+
+    /**
+     * A fragment for viewing college progress.
+     */
+    //TODO: MAKE THIS REAL
+    public static class UpcomingFragment extends Fragment {
+        /**
+         * The fragment argument representing the section number for this
+         * fragment.
+         */
+        private static final String ARG_SECTION_NUMBER = "section_number";
+
+        public UpcomingFragment() {
+        }
+
+        /**
+         * Returns a new instance of this fragment for the given section
+         * number.
+         */
+        public static UpcomingFragment newInstance(int sectionNumber) {
+            UpcomingFragment fragment = new UpcomingFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_upcoming, container, false);
+            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+            textView.setText(getString(R.string.upcoming_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+            return rootView;
+        }
+    }
+
+    /**
+     * A fragment for viewing college progress.
+     */
+    //TODO: MAKE THIS REAL
+    public static class PersonalFragment extends Fragment {
+        /**
+         * The fragment argument representing the section number for this
+         * fragment.
+         */
+        private static final String ARG_SECTION_NUMBER = "section_number";
+
+        public PersonalFragment() {
+        }
+
+        /**
+         * Returns a new instance of this fragment for the given section
+         * number.
+         */
+        public static PersonalFragment newInstance(int sectionNumber) {
+            PersonalFragment fragment = new PersonalFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_personal, container, false);
+            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+            textView.setText(getString(R.string.personal_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             return rootView;
         }
     }

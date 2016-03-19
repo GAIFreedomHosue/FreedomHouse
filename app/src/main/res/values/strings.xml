@@ -18,5 +18,7 @@
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="college_format">Let\'s go to college in section: %1$d</string>
+    <string name="upcoming_format">Let\'s go to calendar in section: %1$d</string>
+    <string name="personal_format">Let\'s go to ourself in section: %1$d</string>
     <!-- NEED TO CHANGE TEXT ABOVE LATER -->
 </resources>
