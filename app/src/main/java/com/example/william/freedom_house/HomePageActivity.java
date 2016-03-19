@@ -124,8 +124,9 @@ public class HomePageActivity extends AppCompatActivity {
     }
 
     /**
-     * A placeholder fragment containing a simple view.
+     * A fragment for viewing college progress.
      */
+    //TODO: MAKE THIS REAL
     public static class CollegeFragment extends Fragment {
         /**
          * The fragment argument representing the section number for this
@@ -151,9 +152,9 @@ public class HomePageActivity extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_home_page, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_colleges, container, false);
             TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+            textView.setText(getString(R.string.college_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             return rootView;
         }
     }
